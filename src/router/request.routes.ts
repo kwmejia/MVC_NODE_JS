@@ -3,6 +3,7 @@ import {
   renderAddRequestPage,
   renderViewRequestsPage,
   submitRequest,
+  updateRequestStatus,
 } from "../controllers/request.controller.js";
 
 const router = express.Router();
@@ -15,5 +16,8 @@ router.get("/", renderViewRequestsPage);
 
 // Ruta para manejar el envío del formulario
 router.post("/submit", submitRequest);
+
+// Ruta para actualizar el estado de una solicitud
+router.post("/requests/:id/status", updateRequestStatus);
 
 export default router;

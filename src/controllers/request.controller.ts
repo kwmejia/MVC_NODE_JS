@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { getRequests, saveRequest } from "../models/request.model.js";
+import {
+  getRequests,
+  saveRequest,
+  updateRequest,
+} from "../models/request.model.js";
 
 export const renderAddRequestPage = (req: Request, res: Response) => {
   res.render("add-request", { title: "Enviar Solicitud" });
@@ -43,5 +47,16 @@ export const submitRequest = (req: Request, res: Response): void => {
   };
 
   saveRequest(newRequest);
+  res.redirect("/");
+};
+
+export const updateRequestStatus = (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  // Actualiza el estado de la solicitud
+  updateRequest(parseInt(id, 10), { status });
+
+  // Redirige a la página de solicitudes
   res.redirect("/");
 };

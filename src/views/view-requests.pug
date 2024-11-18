@@ -16,7 +16,7 @@ block content
         )
         button(
           type="submit"
-          class="bg-pink-600  hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-lg"
+          class="bg-pink-600 hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-lg"
         ) Buscar
         a(
           href="/"
@@ -39,18 +39,15 @@ block content
             p.text-sm.text-gray-600.mt-2
               strong Mensaje: 
               span= request.message
-            p.text-sm.text-gray-500.mt-2
+            p.text-sm.text-gray-600.mt-2
               strong Estado: 
               span.font-medium= request.status
-            p.text-sm.text-gray-500.mt-2
-              strong Fecha de Creación: 
-              span= new Date(request.created_at).toLocaleString()
-            p.text-sm.text-gray-500.mt-2
-              strong Última Actualización: 
-              span= new Date(request.updated_at).toLocaleString()
-            if request.response
-              p.text-sm.text-gray-500.mt-2
-                strong Respuesta: 
-                span.font-medium.text-green-600= request.response
+            // Formulario para cambiar el estado
+            form(action=`/requests/${request.id}/status` method="POST" class="flex items-center gap-4 mt-2")
+              select(name="status" id="status" class="p-2 border rounded-md w-40")
+                option(value="Pendiente" selected=(request.status === 'Pendiente')) Pendiente
+                option(value="En Proceso" selected=(request.status === 'En Proceso')) En Proceso
+                option(value="Resuelta" selected=(request.status === 'Resuelta')) Resuelta
+              button(type="submit" class="bg-pink-600 hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-lg") Actualizar
     else
       p.text-gray-500.text-center No hay solicitudes registradas.
