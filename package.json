@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "tsc && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css && nodemon --watch 'src/**/*.ts' --exec 'node --loader @esbuild-kit/esm-loader' src/index.ts",
-    "build": "tsc && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css",
+    "dev": "tsc && cp -R ./src/views ./dist/views && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css && nodemon --watch 'src/**/*.ts' --exec 'node --loader @esbuild-kit/esm-loader' src/index.ts",
+    "build": "tsc && cp -R ./src/views ./dist/views && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css",
     "dev:css": "tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css --watch"
   },
   "keywords": [],
