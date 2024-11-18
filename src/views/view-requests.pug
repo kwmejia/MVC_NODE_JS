@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  .container.mx-auto.p-8
+    h1.text-3xl.font-bold.text-center.mb-6 Sistema de Soporte al Cliente
+
+    // Formulario de búsqueda
+    form(action="/" method="GET" class="mb-6")
+      .flex.items-center.gap-4
+        input(
+          type="text"
+          name="query"
+          placeholder="Buscar..."
+          value=query
+          class="p-2 w-80 border rounded-md focus:ring-pink-400 focus:border-pink-400"
+        )
+        button(
+          type="submit"
+          class="bg-pink-600  hover:bg-pink-400 text-white font-semibold px-4 py-2 rounded-lg"
+        ) Buscar
+        a(
+          href="/"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-4 py-2 rounded-lg"
+        ) Limpiar Filtros
+
+    // Listado de solicitudes
+    h2.text-2xl.font-semibold.mt-8.mb-4 Solicitudes Recibidas
+    if requests.length
+      ul
+        each request in requests
+          li.bg-white.shadow-md.rounded-lg.p-4.mb-4
+            h3.font-bold.text-lg.text-gray-800= request.subject
+            p.text-sm.text-gray-600.mt-2
+              strong Nombre: 
+              span= request.name
+            p.text-sm.text-gray-600.mt-2
+              strong Correo Electrónico: 
+              span= request.email
+            p.text-sm.text-gray-600.mt-2
+              strong Mensaje: 
+              span= request.message
+            p.text-sm.text-gray-500.mt-2
+              strong Estado: 
+              span.font-medium= request.status
+            p.text-sm.text-gray-500.mt-2
+              strong Fecha de Creación: 
+              span= new Date(request.created_at).toLocaleString()
+            p.text-sm.text-gray-500.mt-2
+              strong Última Actualización: 
+              span= new Date(request.updated_at).toLocaleString()
+            if request.response
+              p.text-sm.text-gray-500.mt-2
+                strong Respuesta: 
+                span.font-medium.text-green-600= request.response
+    else
+      p.text-gray-500.text-center No hay solicitudes registradas.

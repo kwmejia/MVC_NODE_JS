@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1731897685076,
+    "name": "Kevin",
+    "email": "marcos.silva@biggibot.com.co",
+    "subject": "Test",
+    "message": "test",
+    "status": "Pendiente",
+    "response": null,
+    "created_at": "2024-11-18T02:41:25.076Z",
+    "updated_at": "2024-11-18T02:41:25.076Z"
+  }
+]

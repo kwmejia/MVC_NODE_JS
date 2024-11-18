@@ -1,0 +1,32 @@
+{
+  "name": "arquitectura_backend_mvc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsc && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css && nodemon --watch 'src/**/*.ts' --exec 'node --loader @esbuild-kit/esm-loader' src/index.ts",
+    "build": "tsc && cp -R ./src/data ./dist/data && tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css",
+    "dev:css": "tailwindcss -i ./src/public/css/globals.styles.css -o ./dist/css/globals.styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@esbuild-kit/esm-loader": "^2.6.5",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.49",
+    "pug": "^3.0.3",
+    "tailwindcss": "^3.4.15"
+  }
+}

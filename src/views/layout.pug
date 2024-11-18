@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/css/globals.styles.css")
+    link(rel="stylesheet" href="/public/css/globals.styles.css")
+  body(class="bg-gray-100 font-sans")
+
+    .flex.h-screen
+      .w-64.bg-pink-50.shadow-xl.p-6.flex.flex-col.justify-between
+        h2.text-2xl.font-bold.text-pink-700.mb-6.text-center Sistema de Soporte
+        ul
+          li.mb-4
+            a(href="/add" class="block text-pink-700 hover:text-pink-900 bg-pink-100 hover:bg-pink-200 font-semibold px-4 py-2 rounded-lg transition duration-200") Agregar Solicitud
+          li.mb-4
+            a(href="/" class="block text-pink-700 hover:text-pink-900 bg-pink-100 hover:bg-pink-200 font-semibold px-4 py-2 rounded-lg transition duration-200") Ver Solicitudes
+
+        .mt-auto.text-center.text-sm.text-gray-500
+          p &copy; 2024 Sistema de Soporte
+
+      .flex-1.p-6
+        block content

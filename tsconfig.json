@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                  // Soporta las últimas características de ES
+    "module": "Node16",                  // Módulos de Node.js
+    "moduleResolution": "Node16",        // Resolución de módulos Node.js
+    "esModuleInterop": true,             // Importaciones predeterminadas compatibles
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",                  // Carpeta de salida
+    "rootDir": "./src",                  // Carpeta de entrada
+    "strict": true,                      // Habilita verificaciones estrictas
+    "skipLibCheck": true                 // Omite verificar archivos de tipo
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
