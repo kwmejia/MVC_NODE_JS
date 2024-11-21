@@ -3,13 +3,6 @@
 
 Este proyecto es una aplicación construida con Node.js y TypeScript utilizando el patrón de diseño Modelo-Vista-Controlador (MVC). Proporciona funcionalidades para gestionar solicitudes de soporte al cliente, permitiendo agregar, listar y actualizar el estado de las solicitudes.
 
-## Integrantes
-
-- Javier Ricardo Baron Fuentes
-- Natalia Villamizar Silva
-- Brandon Yesid Celis Orejarena
-- Cristian Fernando
-
 
 ## Estructura del Proyecto
 El proyecto está organizado de la siguiente manera:
